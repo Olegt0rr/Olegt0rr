@@ -1,16 +1,12 @@
-### Hi there 👋
+💬 Ask me about Telegram Bots :)
 
-<!--
-**Olegt0rr/Olegt0rr** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
--->
+---
+<p>
+  
+  <img src="https://badgen.net/badge/python/3.6+/blue">
+  <img src="https://img.shields.io/badge/code%20style-black-000000.svg">
+  <img src="https://badgen.net/badge/icon/docker?icon=docker&label">
+  <img src="https://badgen.net/badge/icon/telegram?icon=telegram&label">
+  <img src="https://gpvc.arturio.dev/Olegt0rr"> 
+</p>
+<img src="https://github-readme-stats.vercel.app/api?username=Olegt0rr&show_icons=true&count_private=true">
