@@ -1,4 +1,4 @@
-💬 Ask me about Telegram Bots :)
+💬 Ask me about `Telegram Bots` and `API building` :)
 
 ---
 <p>
