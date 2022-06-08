@@ -11,3 +11,11 @@
   <img src="https://gpvc.arturio.dev/Olegt0rr"> 
 </p>
 <img src="https://github-readme-stats.vercel.app/api?username=Olegt0rr&show_icons=true&count_private=true">
+
+---
+<b>Python 3.x</b>: asyncio, aiohttp, fastapi, sanic, sqlalchemy, aiogram, arq, flask, celery \
+<b>Databases</b>: redis, postgres, mongo, clickhouse, ES \
+<b>Queues</b>: rabbitmq, kafka \
+<b>Ingress</b>: nginx, traefik \
+<b>DevOps</b>: Docker Swarm, K8S, GitLab CI, Ansible, SonarQube \
+<b>Other</b>: Sentry, Jaeger, Grafana, Influx2, ELK, Telegraf
