@@ -15,12 +15,14 @@
 
 # Technologies
 
-<b>Python 3.x</b>: asyncio, aiohttp, fastapi, sanic, sqlalchemy, aiogram, arq, flask, celery \
-<b>Databases</b>: redis, postgres, mongo, clickhouse, ES \
+<b>Python 3.x</b>: asyncio, aiohttp, fastapi, sanic, sqlalchemy, arq, flask, celery, aiogram, pyrogram \
+<b>Databases/cache</b>: postgres, mongo, clickhouse, elasticsearch, redis \
 <b>Queues</b>: rabbitmq, kafka \
 <b>Ingress</b>: nginx, traefik \
-<b>DevOps</b>: Docker Swarm, K8S, GitLab CI, Ansible, SonarQube \
-<b>Other</b>: Sentry, Jaeger, Grafana, Influx2, ELK, Telegraf
+<b>DevOps</b>: Docker Swarm, Kubernetes, GitLab CI, Ansible, SonarQube \
+<b>TaskTracking</b>: Jira, YouTrack, JB.Space, YandexTracker \
+<b>Git</b>: GitHub, GitLab, BitBucket, JB.Space \
+<b>Other</b>: Sentry, Jaeger, Grafana, Influx2, ELK, Telegraf, Loki
 
 
 # Public Projects
