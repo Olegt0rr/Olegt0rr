@@ -35,8 +35,8 @@ Link: https://truemafia.ru
 
 My roles: CTO, PO, DEV
 
-MAU: 1M \
-Average RPS: 5k
+MAU: millions! \
+RPS: thoudsands!
 
 
 ## TrueChecker
