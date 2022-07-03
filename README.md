@@ -46,7 +46,9 @@ First and the most trusted Telegram bot auditory checking tool.
 Link: https://checker.trueweb.app \
 API: https://checker.trueweb.app/redoc \
 Python client: https://gitlab.com/true-web-app/true-checker/true-checker-python \
-Used by: https://botstat.io/
+Used by: 
+ - https://botstat.io/
+ - https://tginfo.ru/
 
 My roles: CTO, PO, DEV
 
