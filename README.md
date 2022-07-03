@@ -41,7 +41,7 @@ RPS: thousands!
 
 ## TrueChecker
 
-First and the most trusted Telegram bot auditory checking tool.
+First and the most trusted Telegram bot audience checking tool.
 
 Link: https://checker.trueweb.app \
 API: https://checker.trueweb.app/redoc \
