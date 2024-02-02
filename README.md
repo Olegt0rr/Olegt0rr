@@ -1,7 +1,7 @@
 💬 Ask me about `Telegram Bots` and `API building` :)
 
 <p>
-  <img src="https://badgen.net/badge/python/3.6+/blue">
+  <img src="https://badgen.net/badge/python/3+/blue">
   <img src="https://img.shields.io/badge/code%20style-black-000000.svg">
   <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/charliermarsh/ruff/main/assets/badge/v1.json">
   <img src="https://badgen.net/badge/icon/docker?icon=docker&label">
@@ -15,7 +15,7 @@
 
 # Technologies
 
-<b>Python 3.x</b>: asyncio, aiohttp, fastapi, sanic, sqlalchemy, arq, flask, celery, aiogram, pyrogram \
+<b>Python 3.x</b>: asyncio, aiohttp, aiohttp-sse, fastapi, sanic, sqlalchemy, arq, flask, celery, aiogram, pyrogram \
 <b>Databases/cache</b>: postgres, mongo, clickhouse, elasticsearch, redis \
 <b>Queues</b>: rabbitmq, kafka \
 <b>Ingress</b>: nginx, traefik \
@@ -24,6 +24,11 @@
 <b>Git</b>: GitHub, GitLab, BitBucket, JB.Space \
 <b>Other</b>: Sentry, Jaeger, Grafana, Influx2, ELK, Telegraf, Loki
 
+# Educational activities
+
+- Yandex.Practicum's "async python" cource contributor
+- Yandex.Practicum's "async python" cource mentor
+- Yandex.Practicum's "middle python" cource contributor
 
 # Public Projects
 
@@ -39,7 +44,7 @@ MAU: millions! \
 RPS: thousands!
 
 
-## TrueChecker
+## TrueChecker (archived)
 
 First and the most trusted Telegram bot audience checking tool.
 
