@@ -13,17 +13,6 @@
 
 <img src="https://github-readme-stats.vercel.app/api?username=Olegt0rr&show_icons=true&count_private=true">
 
-# Technologies
-
-<b>Python 3.x</b>: asyncio, aiohttp, aiohttp-sse, fastapi, sanic, sqlalchemy, arq, flask, celery, aiogram, pyrogram \
-<b>Databases/cache</b>: postgres, mongo, clickhouse, elasticsearch, redis \
-<b>Queues</b>: rabbitmq, kafka \
-<b>Ingress</b>: nginx, traefik \
-<b>DevOps</b>: Docker Swarm, Kubernetes, GitLab CI, Ansible, SonarQube \
-<b>TaskTracking</b>: Jira, YouTrack, JB.Space, YandexTracker \
-<b>Git</b>: GitHub, GitLab, BitBucket, JB.Space \
-<b>Other</b>: Sentry, Jaeger, Grafana, Influx2, ELK, Telegraf, Loki
-
 # Educational activities
 
 - Yandex.Practicum's "async python" course contributor
