@@ -1,12 +1,12 @@
 💬 Ask me about `Telegram Bots` and `API building` :)
 
 <p>
-  <img src="https://badgen.net/badge/python/3+/blue">
-  <img src="https://img.shields.io/badge/code%20style-black-000000.svg">
-  <img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/charliermarsh/ruff/main/assets/badge/v1.json">
-  <img src="https://badgen.net/badge/icon/docker?icon=docker&label">
-  <img src="https://badgen.net/badge/icon/telegram?icon=telegram&label">
-  <img src="https://wakatime.com/badge/user/2c037bd7-405a-43be-a6ab-b2b07c84b73f.svg">
+  <a href="https://www.python.org"><img src="https://badgen.net/badge/python/3+/blue"></a>
+  <a href="https://docs.astral.sh/ruff/formatter/"><img src="https://img.shields.io/badge/code%20style-black-000000.svg"></a>
+  <a href="https://github.com/astral-sh/ruff"><img src="https://img.shields.io/endpoint?url=https://raw.githubusercontent.com/charliermarsh/ruff/main/assets/badge/v1.json"></a>
+  <a href="https://www.docker.com"><img src="https://badgen.net/badge/icon/docker?icon=docker&label"></a>
+  <a href="https://t.me/Oleg_Oleg_Oleg"><img src="https://badgen.net/badge/icon/telegram?icon=telegram&label"></a>
+  <a href="https://wakatime.com/@t0rr"><img src="https://wakatime.com/badge/user/2c037bd7-405a-43be-a6ab-b2b07c84b73f.svg"></a>
 </p>
 
 # Stats
