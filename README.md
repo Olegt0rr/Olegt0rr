@@ -15,9 +15,9 @@
 
 # Educational activities
 
-- Yandex.Practicum's "async python" course contributor
-- Yandex.Practicum's "async python" course mentor
-- Yandex.Practicum's "middle python" course contributor
+- Yandex.Practicum's "async python" course contributor (2022-2024)
+- Yandex.Practicum's "async python" course mentor (2022-2024)
+- Yandex.Practicum's "middle python" course contributor (2022-2024)
 
 # Public Projects
 
