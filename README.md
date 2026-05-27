@@ -11,11 +11,14 @@
 
 # Stats
 
-![GitHub Stats](https://cdn.jsdelivr.net/gh/Olegt0rr/Olegt0rr@main/profile/stats.svg)
+<p align="center">
+  <img src="https://cdn.jsdelivr.net/gh/Olegt0rr/Olegt0rr@main/profile/stats.svg" alt="GitHub Stats" />
+  <img src="https://cdn.jsdelivr.net/gh/Olegt0rr/Olegt0rr@main/profile/top-langs.svg" alt="Top Languages" />
+</p>
 
-![Top Languages](https://cdn.jsdelivr.net/gh/Olegt0rr/Olegt0rr@main/profile/top-langs.svg)
-
-![Activity Graph](https://cdn.jsdelivr.net/gh/Olegt0rr/Olegt0rr@main/profile/activity-graph.svg)
+<p align="center">
+  <img src="https://cdn.jsdelivr.net/gh/Olegt0rr/Olegt0rr@main/profile/activity-graph.svg" alt="Activity Graph" />
+</p>
 
 # Educational activities
 
