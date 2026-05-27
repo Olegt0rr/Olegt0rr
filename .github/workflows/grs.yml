@@ -20,31 +20,55 @@ jobs:
         with:
           token: ${{ secrets.PAT_TOKEN }}
 
-      - name: Generate stats card
+      # ─── Stats: light ───
+      - name: Generate stats card (light)
+        uses: readme-tools/github-readme-stats-action@v1
+        with:
+          card: stats
+          options: username=Olegt0rr&show_icons=true&count_private=true&include_all_commits=true&theme=default
+          path: profile/stats-light.svg
+          token: ${{ secrets.PAT_TOKEN }}
+
+      # ─── Stats: dark ───
+      - name: Generate stats card (dark)
         uses: readme-tools/github-readme-stats-action@v1
         with:
           card: stats
           options: username=Olegt0rr&show_icons=true&count_private=true&include_all_commits=true&theme=tokyonight
-          path: profile/stats.svg
+          path: profile/stats-dark.svg
           token: ${{ secrets.PAT_TOKEN }}
 
-      - name: Generate top languages card
+      # ─── Top languages: light ───
+      - name: Generate top languages card (light)
+        uses: readme-tools/github-readme-stats-action@v1
+        with:
+          card: top-langs
+          options: username=Olegt0rr&layout=compact&langs_count=8&theme=default
+          path: profile/top-langs-light.svg
+          token: ${{ secrets.PAT_TOKEN }}
+
+      # ─── Top languages: dark ───
+      - name: Generate top languages card (dark)
         uses: readme-tools/github-readme-stats-action@v1
         with:
           card: top-langs
           options: username=Olegt0rr&layout=compact&langs_count=8&theme=tokyonight
-          path: profile/top-langs.svg
+          path: profile/top-langs-dark.svg
           token: ${{ secrets.PAT_TOKEN }}
 
-      - name: Generate activity graph
+      # ─── Activity graph: light + dark ───
+      - name: Generate activity graph (light + dark)
         run: |
           mkdir -p profile
           curl -fsSL --retry 3 --retry-delay 5 \
-            -o profile/activity-graph.svg \
+            -o profile/activity-graph-light.svg \
+            "https://github-readme-activity-graph.vercel.app/graph?username=Olegt0rr&theme=minimal&hide_border=true&area=true&radius=8"
+          curl -fsSL --retry 3 --retry-delay 5 \
+            -o profile/activity-graph-dark.svg \
             "https://github-readme-activity-graph.vercel.app/graph?username=Olegt0rr&theme=tokyo-night&hide_border=true&area=true&radius=8"
 
       - name: Commit cards
-        uses: stefanzweifel/git-auto-commit-action@v5
+        uses: stefanzweifel/git-auto-commit-action@v7
         with:
           commit_message: Update README cards
           file_pattern: profile/*.svg

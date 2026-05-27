@@ -9,15 +9,24 @@
   <a href="https://wakatime.com/@t0rr"><img src="https://wakatime.com/badge/user/2c037bd7-405a-43be-a6ab-b2b07c84b73f.svg"></a>
 </p>
 
-# Stats
+## Stats
 
 <p align="center">
-  <img src="https://cdn.jsdelivr.net/gh/Olegt0rr/Olegt0rr@main/profile/stats.svg" alt="GitHub Stats" />
-  <img src="https://cdn.jsdelivr.net/gh/Olegt0rr/Olegt0rr@main/profile/top-langs.svg" alt="Top Languages" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/Olegt0rr/Olegt0rr@main/profile/stats-dark.svg">
+    <img alt="GitHub Stats" src="https://cdn.jsdelivr.net/gh/Olegt0rr/Olegt0rr@main/profile/stats-light.svg">
+  </picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/Olegt0rr/Olegt0rr@main/profile/top-langs-dark.svg">
+    <img alt="Top Languages" src="https://cdn.jsdelivr.net/gh/Olegt0rr/Olegt0rr@main/profile/top-langs-light.svg">
+  </picture>
 </p>
 
 <p align="center">
-  <img src="https://cdn.jsdelivr.net/gh/Olegt0rr/Olegt0rr@main/profile/activity-graph.svg" alt="Activity Graph" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://cdn.jsdelivr.net/gh/Olegt0rr/Olegt0rr@main/profile/activity-graph-dark.svg">
+    <img alt="Activity Graph" src="https://cdn.jsdelivr.net/gh/Olegt0rr/Olegt0rr@main/profile/activity-graph-light.svg">
+  </picture>
 </p>
 
 # Educational activities
