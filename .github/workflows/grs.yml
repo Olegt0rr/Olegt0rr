@@ -2,11 +2,15 @@ name: Update README cards
 
 on:
   schedule:
-    - cron: "0 3 * * *"   # ежедневно в 03:00 UTC
-  workflow_dispatch:       # ручной запуск кнопкой
+    - cron: "0 3 * * *"
+  workflow_dispatch:
 
 permissions:
   contents: write
+
+concurrency:
+  group: update-readme-cards
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -32,10 +36,17 @@ jobs:
           path: profile/top-langs.svg
           token: ${{ secrets.PAT_TOKEN }}
 
-      - name: Commit cards
+      - name: Generate activity graph
         run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add profile/*.svg
-          git diff --quiet --cached || git commit -m "Update README cards"
-          git push
+          mkdir -p profile
+          curl -fsSL --retry 3 --retry-delay 5 \
+            -o profile/activity-graph.svg \
+            "https://github-readme-activity-graph.vercel.app/graph?username=Olegt0rr&theme=tokyo-night&hide_border=true&area=true&radius=8"
+
+      - name: Commit cards
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: Update README cards
+          file_pattern: profile/*.svg
+          commit_user_name: github-actions[bot]
+          commit_user_email: github-actions[bot]@users.noreply.github.com
