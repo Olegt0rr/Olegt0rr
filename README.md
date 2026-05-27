@@ -11,7 +11,7 @@
 
 # Stats
 
-<img src="https://github-readme-stats.vercel.app/api?username=Olegt0rr&show_icons=true&count_private=true">
+![GitHub Stats](https://cdn.jsdelivr.net/gh/Olegt0rr/Olegt0rr@main/profile/stats.svg)
 
 # Educational activities
 
