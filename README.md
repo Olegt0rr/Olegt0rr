@@ -13,6 +13,10 @@
 
 ![GitHub Stats](https://cdn.jsdelivr.net/gh/Olegt0rr/Olegt0rr@main/profile/stats.svg)
 
+![Top Languages](https://cdn.jsdelivr.net/gh/Olegt0rr/Olegt0rr@main/profile/top-langs.svg)
+
+![Activity Graph](https://cdn.jsdelivr.net/gh/Olegt0rr/Olegt0rr@main/profile/activity-graph.svg)
+
 # Educational activities
 
 - Yandex.Practicum's "async python" course contributor (2022-2024)
