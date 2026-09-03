@@ -16,7 +16,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v5
+      - uses: actions/checkout@v7
         with:
           token: ${{ secrets.PAT_TOKEN }}
 
@@ -61,7 +61,7 @@ jobs:
       # returning HTTP 402 (Vercel quota) since 2026-08-25. Run the upstream
       # renderer locally with the same query parameters instead.
       - name: Checkout activity-graph renderer
-        uses: actions/checkout@v5
+        uses: actions/checkout@v7
         with:
           repository: Ashutosh00710/github-readme-activity-graph
           ref: 0962e9461de815933d462e8b98c7ce566cada8fb # main, 2026-05-17
