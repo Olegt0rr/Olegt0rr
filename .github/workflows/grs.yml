@@ -67,6 +67,18 @@ jobs:
             -o profile/activity-graph-dark.svg \
             "https://github-readme-activity-graph.vercel.app/graph?username=Olegt0rr&theme=tokyo-night&hide_border=true&area=true&radius=8"
 
+      - name: Validate generated cards
+        run: |
+          status=0
+          for f in profile/*.svg; do
+            if grep -q "Something went wrong" "$f"; then
+              msg=$(sed -nE 's/.*<tspan[^>]*>([^<]+)<\/tspan>.*/\1/p' "$f" | grep -vx 'OK' | head -n 1)
+              echo "::error file=$f::$f is broken: ${msg:-Something went wrong}"
+              status=1
+            fi
+          done
+          exit $status
+
       - name: Commit cards
         uses: stefanzweifel/git-auto-commit-action@v7
         with:
