@@ -57,23 +57,61 @@ jobs:
           token: ${{ secrets.PAT_TOKEN }}
 
       # ─── Activity graph: light + dark ───
+      # The public instance (github-readme-activity-graph.vercel.app) has been
+      # returning HTTP 402 (Vercel quota) since 2026-08-25. Run the upstream
+      # renderer locally with the same query parameters instead.
+      - name: Checkout activity-graph renderer
+        uses: actions/checkout@v5
+        with:
+          repository: Ashutosh00710/github-readme-activity-graph
+          ref: 0962e9461de815933d462e8b98c7ce566cada8fb # main, 2026-05-17
+          path: .activity-graph
+
+      - name: Setup Node.js for activity-graph renderer
+        uses: actions/setup-node@v7
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: .activity-graph/package-lock.json
+
       - name: Generate activity graph (light + dark)
+        env:
+          TOKEN: ${{ secrets.PAT_TOKEN }}
+          PORT: 5100
         run: |
+          set -euo pipefail
+          (
+            cd .activity-graph
+            npm ci --ignore-scripts --no-audit --no-fund
+            npm run build
+            node dist/main.js &
+            echo $! > server.pid
+          )
+          for _ in $(seq 1 30); do
+            curl -fs "http://localhost:$PORT/" >/dev/null 2>&1 && break
+            sleep 1
+          done
           mkdir -p profile
           curl -fsSL --retry 3 --retry-delay 5 \
             -o profile/activity-graph-light.svg \
-            "https://github-readme-activity-graph.vercel.app/graph?username=Olegt0rr&theme=minimal&hide_border=true&area=true&radius=8"
+            "http://localhost:$PORT/graph?username=Olegt0rr&theme=minimal&hide_border=true&area=true&radius=8"
           curl -fsSL --retry 3 --retry-delay 5 \
             -o profile/activity-graph-dark.svg \
-            "https://github-readme-activity-graph.vercel.app/graph?username=Olegt0rr&theme=tokyo-night&hide_border=true&area=true&radius=8"
+            "http://localhost:$PORT/graph?username=Olegt0rr&theme=tokyo-night&hide_border=true&area=true&radius=8"
+          kill "$(cat .activity-graph/server.pid)"
+          rm -rf .activity-graph
 
       - name: Validate generated cards
         run: |
+          # github-readme-stats: "Something went wrong! ..." + details in <tspan>
+          # activity-graph:      invalidUserSvg() texts (returned with HTTP 200)
+          pattern="Something went wrong|Something unexpected happened|Can't fetch any contribution|API rate limit exceeded"
           status=0
           for f in profile/*.svg; do
-            if grep -q "Something went wrong" "$f"; then
+            if grep -qE "$pattern" "$f"; then
               msg=$(sed -nE 's/.*<tspan[^>]*>([^<]+)<\/tspan>.*/\1/p' "$f" | grep -vx 'OK' | head -n 1)
-              echo "::error file=$f::$f is broken: ${msg:-Something went wrong}"
+              [ -n "$msg" ] || msg=$(grep -oE "[^>]*($pattern)[^<]*" "$f" | head -n 1 | sed -E 's/^[[:space:]]+//')
+              echo "::error file=$f::$f is broken: $msg"
               status=1
             fi
           done
