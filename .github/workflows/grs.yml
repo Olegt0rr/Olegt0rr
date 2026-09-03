@@ -74,23 +74,42 @@ jobs:
           cache: npm
           cache-dependency-path: .activity-graph/package-lock.json
 
+      # Build without secrets in the environment; only the renderer process
+      # below gets the PAT.
+      - name: Build activity-graph renderer
+        working-directory: .activity-graph
+        run: |
+          npm ci --ignore-scripts --no-audit --no-fund
+          npm run build
+
       - name: Generate activity graph (light + dark)
         env:
           TOKEN: ${{ secrets.PAT_TOKEN }}
           PORT: 5100
         run: |
           set -euo pipefail
-          (
-            cd .activity-graph
-            npm ci --ignore-scripts --no-audit --no-fund
-            npm run build
-            node dist/main.js &
-            echo $! > server.pid
-          )
+          cleanup() {
+            rc=$?
+            [ -f renderer.pid ] && kill "$(cat renderer.pid)" 2>/dev/null || true
+            if [ "$rc" -ne 0 ] && [ -f renderer.log ]; then
+              echo "--- renderer log ---"; cat renderer.log
+            fi
+            rm -rf .activity-graph renderer.pid renderer.log
+          }
+          trap cleanup EXIT
+
+          (cd .activity-graph && exec node dist/main.js) > renderer.log 2>&1 &
+          echo $! > renderer.pid
+
           for _ in $(seq 1 30); do
-            curl -fs "http://localhost:$PORT/" >/dev/null 2>&1 && break
+            curl -fsS -o /dev/null "http://localhost:$PORT/" 2>/dev/null && break
             sleep 1
           done
+          if ! curl -fsS -o /dev/null "http://localhost:$PORT/"; then
+            echo "::error::activity-graph renderer did not become reachable on port $PORT"
+            exit 1
+          fi
+
           mkdir -p profile
           curl -fsSL --retry 3 --retry-delay 5 \
             -o profile/activity-graph-light.svg \
@@ -98,8 +117,6 @@ jobs:
           curl -fsSL --retry 3 --retry-delay 5 \
             -o profile/activity-graph-dark.svg \
             "http://localhost:$PORT/graph?username=Olegt0rr&theme=tokyo-night&hide_border=true&area=true&radius=8"
-          kill "$(cat .activity-graph/server.pid)"
-          rm -rf .activity-graph
 
       - name: Validate generated cards
         run: |
@@ -111,6 +128,9 @@ jobs:
             if grep -qE "$pattern" "$f"; then
               msg=$(sed -nE 's/.*<tspan[^>]*>([^<]+)<\/tspan>.*/\1/p' "$f" | grep -vx 'OK' | head -n 1)
               [ -n "$msg" ] || msg=$(grep -oE "[^>]*($pattern)[^<]*" "$f" | head -n 1 | sed -E 's/^[[:space:]]+//')
+              [ -n "$msg" ] || msg="error text matched but could not be extracted"
+              # workflow-command message: strip CR/LF, escape %
+              msg=$(printf '%s' "$msg" | tr -d '\r\n' | sed 's/%/%25/g')
               echo "::error file=$f::$f is broken: $msg"
               status=1
             fi
