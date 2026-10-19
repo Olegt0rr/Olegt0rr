@@ -8,8 +8,8 @@
         role="img"
         aria-labelledby="descId"
       >
-        <title id="titleId">Oleg A.'s GitHub Stats, Rank: A</title>
-        <desc id="descId">Total Stars Earned: 105, Total Commits  : 4201, Total PRs: 464, Total Issues: 382, Contributed to (last year): 8</desc>
+        <title id="titleId">Oleg A.'s GitHub Stats, Rank: A+</title>
+        <desc id="descId">Total Stars Earned: 105, Total Commits  : 4204, Total PRs: 464, Total Issues: 382, Contributed to (last year): 8</desc>
         <style>
           .header {
             font: 600 18px 'Segoe UI', Ubuntu, Sans-Serif;
@@ -73,7 +73,7 @@
         stroke-dashoffset: 251.32741228718345;
       }
       to {
-        stroke-dashoffset: 31.41740752944047;
+        stroke-dashoffset: 31.41267648697199;
       }
     }
   
@@ -143,7 +143,7 @@
         <g class="rank-text">
           
         <text x="-5" y="3" alignment-baseline="central" dominant-baseline="central" text-anchor="middle" data-testid="level-rank-icon">
-          A
+          A+
         </text>
       
         </g>
